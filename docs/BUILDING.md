@@ -1,0 +1,61 @@
+# Building for the LG Optimus L9 family (u2)
+
+These builds come from an Android 4.4.4 (CyanogenMod 11.0) source tree, using
+the LineageOS-maintained `cm-11.0` manifest branches. When LineageOS forked
+CyanogenMod it kept these old manifest branches syncable and lineage-branded,
+while the `cm_*` lunch targets stayed in place until LineageOS 15.
+
+## Requirements
+
+- 64-bit Linux host (the maintainer builds on Ubuntu 20.04), roughly 60 GB of
+  free disk for the source tree and output.
+- The standard CM-11.0 build packages (baseline list below; package names vary
+  by distribution release — adjust as needed):
+
+      sudo apt-get install git gnupg flex bison gperf build-essential \
+        zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
+        lib32ncurses-dev x11proto-core-dev libx11-dev lib32z1-dev \
+        libgl1-mesa-dev libxml2-utils xsltproc unzip
+
+- **Java 7** (JDK 1.7) — CM-11.0 does not build with newer JDKs. Ubuntu 20.04
+  no longer ships `openjdk-7` in the default repositories, so use for example
+  Azul Zulu Community 7, or openjdk-7 packages from an older Ubuntu release.
+  `java -version` must report 1.7 before building.
+- **Python 2.7** — the CM-11.0 release tools (OTA packaging) are Python 2.
+  Make sure `python` resolves to 2.7, e.g.:
+
+      sudo apt install python2
+      sudo ln -sf /usr/bin/python2 /usr/local/bin/python
+
+## Get the source
+
+    mkdir -p ~/android/lineage && cd ~/android/lineage
+    repo init -u https://github.com/LineageOS/android.git -b cm-11.0
+
+Add the device, kernel and vendor repos via the local manifest:
+
+    mkdir -p .repo/local_manifests
+    curl -o .repo/local_manifests/u2.xml \
+      https://raw.githubusercontent.com/XenoM-S/lge-u2-releases/cm-11.0/local_manifests/u2.xml
+
+    repo sync
+
+## Build
+
+    source build/envsetup.sh
+    brunch cm_p760-userdebug    # or cm_p765 / cm_p768 / cm_p769
+
+The kernel is compiled from source (`kernel/lge/omap4-common`) as part of the
+build. The OTA zip lands in `out/target/product/<device>/`.
+
+## Zip naming
+
+The published zips are named `lineage-11-<date>-UNOFFICIAL-<device>.zip`. That
+naming and the `LINEAGE_VERSION` version string come from the LineageOS
+`cm-11.0` branches of the build system itself, not from any local
+modifications. Building with the manifest above plus `local_manifests/u2.xml`
+therefore reproduces the released zips exactly — no extra forks are needed.
+
+Note the lunch targets stay `cm_p7xx-userdebug` (not `lineage_p7xx`): the
+`cm_*` product naming was kept by LineageOS up to and including the 14.1
+branch, and only LineageOS 15 introduced `lineage_*` targets.
