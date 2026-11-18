@@ -52,4 +52,4 @@ you need are pinned in
   assisted by an AI coding assistant (GLM); all changes were reviewed, built
   and (for p760) tested by XenoM-S.
 
-XDA thread: 【link to thread once posted】
+XDA thread: https://xdaforums.com/t/rom-unofficial-4-4-4-all-variants-lineageos-11-for-the-lg-optimus-l9.4809161/
