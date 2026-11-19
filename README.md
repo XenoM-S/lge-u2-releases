@@ -1,15 +1,15 @@
-# Lineage 11.0 (Android 4.4.4) for the LG Optimus L9 family (u2)
+# Lineage 12.1 (Android 5.1.1) for the LG Optimus L9 family (u2)
 
-Unofficial, community builds of Android 4.4.4 (CyanogenMod 11.0 base, built
-from the LineageOS-maintained `cm-11.0` manifest branches) for the LG Optimus
+Unofficial, community builds of Android 5.1.1 (CyanogenMod 12.1 base, built
+from the LineageOS-maintained `cm-12.1` manifest branches) for the LG Optimus
 L9 family — LGE "u2" platform, TI OMAP4430 + PowerVR SGX540.
 
 | Device | Model | Build target | Status |
 | ------ | ----- | ------------ | ------ |
-| Optimus L9 | LG-P760 | `cm_p760-userdebug` | Tested on hardware by the maintainer |
-| Optimus L9 | LG-P765 | `cm_p765-userdebug` | Builds clean — community testing needed |
-| Optimus L9 | LG-P768 | `cm_p768-userdebug` | Builds clean — community testing needed |
-| Optimus L9 | LG-P769 | `cm_p769-userdebug` | Builds clean — community testing needed |
+| Optimus L9 | LG-P760 | `cm_p760-userdebug` | Build staging |
+| Optimus L9 | LG-P765 | `cm_p765-userdebug` | Build staging |
+| Optimus L9 | LG-P768 | `cm_p768-userdebug` | Build staging |
+| Optimus L9 | LG-P769 | `cm_p769-userdebug` | Build staging |
 
 All four variants share the same hardware platform and the same kernel, vendor
 blob set and shared device layer; each device tree only carries per-variant
@@ -52,4 +52,4 @@ you need are pinned in
   assisted by an AI coding assistant (GLM); all changes were reviewed, built
   and (for p760) tested by XenoM-S.
 
-XDA thread: https://xdaforums.com/t/rom-unofficial-4-4-4-all-variants-lineageos-11-for-the-lg-optimus-l9.4809161/
+XDA thread: [ Fill in when ready ]
