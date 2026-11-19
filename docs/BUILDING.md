@@ -65,9 +65,9 @@ build. The OTA zip lands in `out/target/product/<device>/`.
 
 ## Zip naming
 
-The published zips are named `lineage-11-<date>-UNOFFICIAL-<device>.zip`. That
+The published zips are named `lineage-12.1-<date>-UNOFFICIAL-<device>.zip`. That
 naming and the `LINEAGE_VERSION` version string come from the LineageOS
-`cm-11.0` branches of the build system itself, not from any local
+`cm-12.1` branches of the build system itself, not from any local
 modifications. Building with the manifest above plus `local_manifests/u2.xml`
 therefore reproduces the released zips exactly — no extra forks are needed.
 
