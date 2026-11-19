@@ -1,7 +1,7 @@
 # Release notes template
 
 Copy the block below into the GitHub Release description for each build wave.
-Tag convention: `cm-11.0-YYYYMMDD`, created on the lge-u2-releases commit that
+Tag convention: `cm-12.1-YYYYMMDD`, created on the lge-u2-releases commit that
 documents the wave. Attach the device zips plus one `SHA256SUMS` file — never
 commit zips into git.
 
@@ -16,10 +16,10 @@ Collect the source SHAs right after the build:
 
 **Unofficial Lineage 11.0 build — 【YYYYMMDD】**
 
-- LG-P760: `lineage-11-【YYYYMMDD】-UNOFFICIAL-p760.zip`
-- LG-P765: `lineage-11-【YYYYMMDD】-UNOFFICIAL-p765.zip`
-- LG-P768: `lineage-11-【YYYYMMDD】-UNOFFICIAL-p768.zip`
-- LG-P769: `lineage-11-【YYYYMMDD】-UNOFFICIAL-p769.zip`
+- LG-P760: `lineage-12.1-【YYYYMMDD】-UNOFFICIAL-p760.zip`
+- LG-P765: `lineage-12.1-【YYYYMMDD】-UNOFFICIAL-p765.zip`
+- LG-P768: `lineage-12.1-【YYYYMMDD】-UNOFFICIAL-p768.zip`
+- LG-P769: `lineage-12.1-【YYYYMMDD】-UNOFFICIAL-p769.zip`
 
 ### Sources used for this build
 
