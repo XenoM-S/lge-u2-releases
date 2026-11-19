@@ -1,20 +1,20 @@
 # Building for the LG Optimus L9 family (u2)
 
-These builds come from an Android 4.4.4 (CyanogenMod 11.0) source tree, using
-the LineageOS-maintained `cm-11.0` manifest branches. When LineageOS forked
+These builds come from an Android 5.1.1 (CyanogenMod 12.1) source tree, using
+the LineageOS-maintained `cm-12.1` manifest branches. When LineageOS forked
 CyanogenMod it kept these old manifest branches syncable and lineage-branded,
 while the `cm_*` lunch targets stayed in place until LineageOS 15.
 
 ## Requirements
 
-- 64-bit Linux host, preferably Ubuntu 20.04 with roughly 60 GB of
+- 64-bit Linux host, preferably Ubuntu 20.04 with roughly 100 GB of
   free disk for the source tree and output. If you are building for all devices,
   you want to have roughly 200-350 GB with a 50 GB ccache to speed up the build
   process.
 - Host needs at least 4 CPU cores and 16 GB of RAM. (ROMS made in the release repo
   are build on a Ubuntu 20.04 VM with 8 cores and 32 GB of RAM, takes about
   20+ minutes for each device model with these specs).
-- The standard CM-11.0 build packages (baseline list below; package names vary
+- The standard CM-12.1 build packages (baseline list below; package names vary
   by distribution release — adjust as needed):
 
       sudo apt-get install -y git ccache gnupg flex bison gperf imagemagick build-essential \
@@ -23,7 +23,7 @@ while the `cm_*` lunch targets stayed in place until LineageOS 15.
         libwxgtk3.0-dev libgl1-mesa-dev libxml2 libxml2-utils lzop xsltproc unzip \
         schedtool squashfs-tools zlib1g-dev
 
-- **Java 7** (JDK 1.7) — CM-11.0 does not build with newer JDKs. Ubuntu 20.04
+- **Java 7** (JDK 1.7) — CM-12.1 does not build with newer JDKs. Ubuntu 20.04
   no longer ships `openjdk-7` in the default repositories, so use for example
   Azul Zulu Community 7, or openjdk-7 packages from an older Ubuntu release.
   Like so: 
@@ -35,7 +35,7 @@ while the `cm_*` lunch targets stayed in place until LineageOS 15.
       sudo apt install -y zulu7-jdk
      
   `java -version` must report 1.7 before building.
-- **Python 2.7** — the CM-11.0 release tools (OTA packaging) are Python 2.
+- **Python 2.7** — the CM-12.1 release tools (OTA packaging) are Python 2.
   Make sure `python` resolves to 2.7, e.g.:
 
       sudo apt install python2
@@ -44,7 +44,7 @@ while the `cm_*` lunch targets stayed in place until LineageOS 15.
 ## Get the source
 
     mkdir -p ~/android/lineage && cd ~/android/lineage
-    repo init -u https://github.com/LineageOS/android.git -b cm-11.0
+    repo init -u https://github.com/LineageOS/android.git -b cm-12.1
 
 Add the device, kernel and vendor repos via the local manifest:
 
