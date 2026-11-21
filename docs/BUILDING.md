@@ -50,7 +50,7 @@ Add the device, kernel and vendor repos via the local manifest:
 
     mkdir -p .repo/local_manifests
     curl -o .repo/local_manifests/u2.xml \
-      https://raw.githubusercontent.com/XenoM-S/lge-u2-releases/cm-11.0/local_manifests/u2.xml
+      https://raw.githubusercontent.com/XenoM-S/lge-u2-releases/cm-12.1/local_manifests/u2.xml
 
     repo sync -c --no-clone-bundle
 
