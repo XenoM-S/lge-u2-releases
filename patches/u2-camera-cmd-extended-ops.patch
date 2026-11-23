@@ -1,0 +1,24 @@
+--- a/device/lge/u2-common/camera/inc/CameraHal.h
++++ b/device/lge/u2-common/camera/inc/CameraHal.h
+@@ -31,6 +31,21 @@
+ #include <sys/stat.h>
+ 
+ #include <hardware/camera.h>
++/*
++ * TI OMAP_ENHANCEMENT camera extension: command code used by the camera
++ * service to hand the HAL a camera_device_extended_ops_t function table
++ * (extended preview ops / buffer source / reprocess entry points -- see
++ * camera_send_command() in CameraHal_Module.cpp). It was defined in the
++ * KitKat-era TI copy of system/camera.h that this tree shadowed over
++ * AOSP's header; Lollipop userspace only sees the AOSP header, which
++ * lacks it. Value mirrored from
++ * device/lge/u2-common/include/system/camera.h:245. Guarded so a future
++ * header that gains it can never conflict.
++ */
++#ifndef CAMERA_CMD_SETUP_EXTENDED_OPERATIONS
++#define CAMERA_CMD_SETUP_EXTENDED_OPERATIONS 1024
++#endif
++
+ #include <utils/Log.h>
+ #include <utils/threads.h>
+ #include <utils/threads.h>

@@ -1,0 +1,15 @@
+--- a/device/lge/u2-common/camera/V4LCameraAdapter/V4LCameraAdapter.cpp
++++ b/device/lge/u2-common/camera/V4LCameraAdapter/V4LCameraAdapter.cpp
+@@ -36,7 +36,11 @@
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ #include <sys/select.h>
+-#include <linux/videodev.h>
++/* linux/videodev.h (the V4L1 API header) was removed from mainline
++ * kernels (2.6.39, 2011) and from bionic's regenerated UAPI set in
++ * Lollipop. This adapter is pure V4L2 (videodev2.h, included via
++ * V4LCameraAdapter.h) and never used any V4L1 symbols, so the dead
++ * include is dropped rather than shimmed. */
+ #include <cutils/properties.h>
+ #include "DecoderFactory.h"
+ 

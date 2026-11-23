@@ -1,0 +1,26 @@
+--- a/device/lge/u2-common/hwc/hwc.c
++++ b/device/lge/u2-common/hwc/hwc.c
+@@ -50,6 +50,23 @@
+ #include "hwc_dev.h"
+ #include "dock_image.h"
+ #include "sw_vsync.h"
++/*
++ * Lollipop's bionic UAPI copy of <linux/fb.h> is generated from the
++ * mainline kernel and does not carry the LG OMAP4 HDMI aspect-ratio
++ * modedb flags that KitKat userspace inherited from the device kernel's
++ * headers_install output. Mirror the two values the u2 kernel actually
++ * defines (kernel/lge/omap4-common include/linux/fb.h): they tag
++ * fb_videomode.flag entries reported by the DSS HDMI driver, and
++ * set_best_hdmi_mode() below matches on them to pick a correctly-shaped
++ * mirroring mode. Keep the values identical to the kernel header.
++ */
++#ifndef FB_FLAG_RATIO_4_3
++#define FB_FLAG_RATIO_4_3 64
++#endif
++#ifndef FB_FLAG_RATIO_16_9
++#define FB_FLAG_RATIO_16_9 128
++#endif
++
+ 
+ #define min(a, b) ( { typeof(a) __a = (a), __b = (b); __a < __b ? __a : __b; } )
+ #define max(a, b) ( { typeof(a) __a = (a), __b = (b); __a > __b ? __a : __b; } )
