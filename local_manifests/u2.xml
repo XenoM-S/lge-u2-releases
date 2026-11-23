@@ -3,23 +3,23 @@
   <!-- LG Optimus L9 family (u2): device trees, kernel and vendor blobs -->
   <project path="device/lge/p760"
            name="XenoM-S/android_device_lge_p760"
-           remote="github" revision="cm-11.0" />
+           remote="github" revision="cm-12.1" />
   <project path="device/lge/p765"
            name="XenoM-S/android_device_lge_p765"
-           remote="github" revision="cm-11.0" />
+           remote="github" revision="cm-12.1" />
   <project path="device/lge/p768"
            name="XenoM-S/android_device_lge_p768"
-           remote="github" revision="cm-11.0" />
+           remote="github" revision="cm-12.1" />
   <project path="device/lge/p769"
            name="XenoM-S/android_device_lge_p769"
-           remote="github" revision="cm-11.0" />
+           remote="github" revision="cm-12.1" />
   <project path="device/lge/u2-common"
            name="XenoM-S/android_device_lge_u2-common"
-           remote="github" revision="cm-11.0" />
+           remote="github" revision="cm-12.1" />
   <project path="kernel/lge/omap4-common"
            name="XenoM-S/lge-kernel-omap4"
-           remote="github" revision="cm-11.0" />
+           remote="github" revision="cm-12.1" />
   <project path="vendor/lge/u2"
            name="XenoM-S/proprietary_vendor_lge_u2"
-           remote="github" revision="cm-11.0" />
+           remote="github" revision="cm-12.1" />
 </manifest>
